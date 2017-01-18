@@ -108,7 +108,7 @@ export default class Page extends React.Component {
                             })
                         }
                     </div>
-                    <a href="#/list" className="backBtn" title="返回杂志列表">返回列表</a>
+                    <a href="/" className="backBtn" title="返回杂志列表">返回列表</a>
                     <div className="pagePreNext">
                         <a href="javascript:void(0)" className="pre" title="上一页" onClick={this.handlePrePage}></a>
                         <a href="javascript:void(0)" className="next" title="下一页" onClick={this.handleNextPage}></a>

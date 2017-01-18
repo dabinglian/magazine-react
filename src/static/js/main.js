@@ -37,7 +37,7 @@ class MagazineLists extends React.Component {
 
 render((
 	<Router history={hashHistory} >   
-        <Route path="/list" component={MagazineLists} />
+        <Route path="/" component={MagazineLists} />
         <Route path="/page/:id" component={Page} />
     </Router>
 ), document.getElementById("root"))

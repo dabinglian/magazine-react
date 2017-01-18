@@ -1,10 +1,9 @@
 var webpack = require("webpack");
-var htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
 	entry: "./src/static/js/main.js",
 	output: {
-		path: __dirname + "./dist",
+		path: "./dist",
 		filename : "bundle.js"
 	},
 	module: {
@@ -26,11 +25,5 @@ module.exports = {
 　　　　　　	loader: 'url-loader'
 			}
 		]
-	},
-	plugins: [
-		new htmlWebpackPlugin({
-			title: "magazine",
-			template: "src/templates/index.tpl.html"
-		})
-	]
+	}
 }

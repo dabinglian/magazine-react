@@ -37,7 +37,7 @@ export default class List extends React.Component {
                                                 url = '#/page/'+item.index,
                                                 random = Math.random();
                                             return (
-                                                <li key={random} data-key={item.index}>
+                                                <li data-key={item.index} key={random}>
                                                     <a href={url} title={title}>
                                                         <img src={imgSrc} />
                                                         <p>{title}</p>
