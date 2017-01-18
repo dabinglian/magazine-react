@@ -22,9 +22,6 @@ import Page from './page.js'
 class MagazineLists extends React.Component {
 	constructor(props) {
         super(props)
-        this.state = {
-            
-        }
     }
 
     render() {

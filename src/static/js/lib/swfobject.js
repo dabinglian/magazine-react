@@ -729,3 +729,5 @@ var swfobject = function() {
 		}
 	};
 }();
+
+export default swfobject

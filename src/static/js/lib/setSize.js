@@ -1,28 +1,8 @@
-if( document.documentElement )
-	bodyStyle = document.documentElement.style;
-else if( document.body )
-	bodyStyle = document.body.style;
-
-bodyStyle.visibility = "hidden";
-
 function sizeContent(){
 	var windowHeight = getWindowHeight();
-	document.getElementById("fbContainer").style.height = windowHeight + "px";
+	document.getElementById("content").style.height = windowHeight + "px";
 	var windowHeight = getWindowHeight();
-	document.getElementById("fbContainer").style.height = windowHeight + "px";
-
-	var altDiv = document.getElementById("altmsg");
-
-	if( altDiv ){
-		var altH = altDiv.offsetHeight;
-		var altW = altDiv.offsetWidth;
-		altDiv.style.top = (windowHeight / 2 - altH /2)+ "px";
-		altDiv.style.left = (getWindowWidth() / 2 - altW /2)+ "px";
-		$("#fbMenu").hide();
-	}
-
-	if( bodyStyle )
-		bodyStyle.visibility = "visible";
+	document.getElementById("content").style.height = windowHeight + "px";
 }
 
 function addEvent( obj, type, fn )
@@ -66,6 +46,4 @@ function getWindowWidth() {
 	return ww;
 }
 
-setTimeout("sizeContent",0);
-addEvent( window, "load", sizeContent);
-addEvent( window, "resize", sizeContent );
+export default sizeContent

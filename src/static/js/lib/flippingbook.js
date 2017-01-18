@@ -1,3 +1,5 @@
+import swfobject from './swfobject.js'
+
 function FlippingBook() {
 	this.pages = [];
 	this.zoomPages = [];
@@ -73,7 +75,7 @@ function FlippingBook() {
 		dropShadowEnabled: true,
 		dropShadowHideWhenFlipping: true,
 		backgroundColor: 0xFFFFFF,
-		backgroundImage: "../common/img/bg.jpg",
+		backgroundImage: "./src/static/img/bg.jpg",
 		backgroundImagePlacement: "fit", //  "top left", "center", "fit"
 		printEnabled: true
 
@@ -99,7 +101,7 @@ FlippingBook.prototype.create = function(){
 	//	this.settings.firstPageNumber = location.hash.substr(1);
 
 	this.addLoadEvent( this.onWindowLoad );
-	swfobject.embedSWF("../common/FlippingBook.swf", this.containerId, this.stageWidth, this.stageHeight, "8.0.0", "../common/js/expressInstall.swf", this.settings, {allowScriptAccess: "always", bgcolor:  "#" + this.settings.backgroundColor.toString( 16 ),wmode: "opaque" });
+	swfobject.embedSWF("./src/static/js/lib/FlippingBook.swf", this.containerId, this.stageWidth, this.stageHeight, "8.0.0", "", this.settings, {allowScriptAccess: "always", bgcolor:  "#" + this.settings.backgroundColor.toString( 16 ),wmode: "opaque" });
 }
 
 FlippingBook.prototype.getFlippingBookReference = function() {
@@ -289,7 +291,9 @@ FlippingBook.prototype.addLoadEvent = function ( fn ) {
 //	this.getFlippingBookReference().onWheelScroll( delta );
 //}
 
-flippingBook = new FlippingBook();
+var flippingBook = new FlippingBook();
+
+export default flippingBook
 
 //function wheel(event){
 //	var delta = 0;

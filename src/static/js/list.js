@@ -32,11 +32,13 @@ export default class List extends React.Component {
                                 <ul>
                                     {
                                         list.items.map((item) => {
-                                            let title = '第'+item.index+'期';
-                                            let imgSrc = './src/static/img/thumb/thumb_'+item.index+'.jpg';
+                                            let title = '第'+item.index+'期',
+                                                imgSrc = './src/static/img/thumb/thumb_'+item.index+'.jpg',
+                                                url = '#/page/'+item.index,
+                                                random = Math.random();
                                             return (
-                                                <li data-key={item.index}>
-                                                    <a href='javascript:void(0)' title={title}>
+                                                <li key={random} data-key={item.index}>
+                                                    <a href={url} title={title}>
                                                         <img src={imgSrc} />
                                                         <p>{title}</p>
                                                     </a>
